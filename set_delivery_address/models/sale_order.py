@@ -10,7 +10,7 @@ class SaleOrder(models.Model):
         list_partner = []
         for record in self.partner_id:
             for child in record.child_ids:
-                if child.address_verified is True:
+                if child.address_verified:
                     list_partner.append(child.name)
 
         for record in self.partner_id:
@@ -18,12 +18,14 @@ class SaleOrder(models.Model):
                 if len(list_partner) > 1:
                     if child.name == list_partner[0]:
                         values = {
+                            'partner_invoice_id': child.id,
                             'partner_shipping_id': child.id,
                         }
                         self.update(values)
                 else:
-                    if child.address_verified is True:
+                    if child.address_verified:
                         values = {
+                            'partner_invoice_id': child.id,
                             'partner_shipping_id': child.id,
                         }
                         self.update(values)
