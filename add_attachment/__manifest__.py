@@ -8,9 +8,8 @@
     "description": """
      Bizzappdev
     """,
-    "depends": ["sale_management"],
+    "depends": ["mail"],
     "data": [
-        "views/sale_order_views.xml",
     ],
     "license": "LGPL-3",
 }
