@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem name="Automotive Service" id="automotive_service_management"/>
+
+        <menuitem name="Service Appointments" id="service_appointment" parent="automotive_service_management" action="action_service_appointment" sequence="1"/>
+
+        <menuitem name="Book Appointment" id="book_appointment" parent="automotive_service_management" action="action_book_appointment" sequence="2"/>
+
+        <menuitem name="Cancel Appointment" id="cancel_appointment" parent="automotive_service_management" action="action_cancel_appointment" sequence="3"/>
+
+        <menuitem name="Configuration" id="automotive_service_configuration" parent="automotive_service_management"/>
+
+        <menuitem name="Accessories" id="automotive_accessories" parent="automotive_service_configuration" action="action_automotive_accessories"/>
+
+        <menuitem name="Mechanics" id="automotive_mechanics" parent="automotive_service_configuration" action="action_automotive_mechanic"/>
+
+    </data>
+</odoo>

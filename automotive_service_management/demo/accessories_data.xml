@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="automotive_accessories_1" model="automotive.accessories">
+        <field name="name">Car Wash</field>
+        <field name="accessories_name"></field>
+        <field name="service_charge">500</field>
+    </record>
+    <record id="automotive_accessories_2" model="automotive.accessories">
+        <field name="name">TIRE PRESSURE</field>
+        <field name="accessories_name"></field>
+        <field name="service_charge">100</field>
+    </record>
+    <record id="automotive_accessories_3" model="automotive.accessories">
+        <field name="name">Parts Cleaning</field>
+        <field name="accessories_name"></field>
+        <field name="service_charge">350</field>
+    </record>
+    <record id="automotive_accessories_4" model="automotive.accessories">
+        <field name="name">Repair Engine</field>
+        <field name="accessories_name"></field>
+        <field name="service_charge">2000</field>
+    </record>
+    <record id="automotive_accessories_5" model="automotive.accessories">
+        <field name="name">Repair Paddle</field>
+        <field name="accessories_name"></field>
+        <field name="service_charge">500</field>
+    </record>
+    <record id="automotive_accessories_6" model="automotive.accessories">
+        <field name="name">Repair GearBox</field>
+        <field name="accessories_name"></field>
+        <field name="service_charge">1500</field>
+    </record>
+    <record id="automotive_accessories_7" model="automotive.accessories">
+        <field name="name">Exchange Oil</field>
+        <field name="accessories_name"></field>
+        <field name="service_charge">100</field>
+    </record>
+
+    <record id="automotive_accessories_8" model="automotive.accessories">
+        <field name="name">Air Filter</field>
+        <field name="accessories_name">Air Filter</field>
+        <field name="service_charge">300</field>
+    </record>
+    <record id="automotive_accessories_9" model="automotive.accessories">
+        <field name="name">Engine Oil</field>
+        <field name="accessories_name">Engine Oil</field>
+        <field name="service_charge">750</field>
+    </record>
+    <record id="automotive_accessories_10" model="automotive.accessories">
+        <field name="name">HEADLIGHTS, TURN SIGNALS, BRAKE, AND PARKING LIGHTS</field>
+        <field name="accessories_name">HEADLIGHTS, TURN SIGNALS, BRAKE, AND PARKING LIGHTS</field>
+        <field name="service_charge">1000</field>
+    </record>
+    <record id="automotive_accessories_11" model="automotive.accessories">
+        <field name="name">SPARK PLUGS</field>
+        <field name="accessories_name">SPARK PLUGS</field>
+        <field name="service_charge">300</field>
+    </record>
+    <record id="automotive_accessories_12" model="automotive.accessories">
+        <field name="name">WINDSHIELD WIPERS</field>
+        <field name="accessories_name">WINDSHIELD WIPERS</field>
+        <field name="service_charge">500</field>
+    </record>
+    <record id="automotive_accessories_13" model="automotive.accessories">
+        <field name="name">BATTERY</field>
+        <field name="accessories_name">BATTERY</field>
+        <field name="service_charge">1000</field>
+    </record>
+    <record id="automotive_accessories_14" model="automotive.accessories">
+        <field name="name">TIRES-1</field>
+        <field name="accessories_name">TIRE</field>
+        <field name="service_charge">600</field>
+    </record>
+    <record id="automotive_accessories_15" model="automotive.accessories">
+        <field name="name">Music System</field>
+        <field name="accessories_name">Music System With Display</field>
+        <field name="service_charge">700</field>
+    </record>
+    <record id="automotive_accessories_16" model="automotive.accessories">
+        <field name="name">Seat Cover</field>
+        <field name="accessories_name">Seat Cover</field>
+        <field name="service_charge">400</field>
+    </record>
+    <record id="automotive_accessories_17" model="automotive.accessories">
+        <field name="name">Car Charger</field>
+        <field name="accessories_name">Car Charger With Cable</field>
+        <field name="service_charge">50</field>
+    </record>
+
+
+    <record id="automotive_mechanic_1" model="automotive.mechanic">
+        <field name="name">Zoie Rosales</field>
+    </record>
+    <record id="automotive_mechanic_2" model="automotive.mechanic">
+        <field name="name">Leonard Christensen</field>
+    </record>
+    <record id="automotive_mechanic_3" model="automotive.mechanic">
+        <field name="name">Riley Lambert</field>
+    </record>
+    <record id="automotive_mechanic_4" model="automotive.mechanic">
+        <field name="name">Hudson Silva</field>
+    </record>
+    <record id="automotive_mechanic_5" model="automotive.mechanic">
+        <field name="name">Keira Chang</field>
+    </record>
+    <record id="automotive_mechanic_6" model="automotive.mechanic">
+        <field name="name">Elijah Marsh</field>
+    </record>
+    <record id="automotive_mechanic_7" model="automotive.mechanic">
+        <field name="name">Lawrence Gibson</field>
+    </record>
+    <record id="automotive_mechanic_8" model="automotive.mechanic">
+        <field name="name">Adrian Atkins</field>
+    </record>
+    <record id="automotive_mechanic_9" model="automotive.mechanic">
+        <field name="name">William Ayers</field>
+    </record>
+    <record id="automotive_mechanic_10" model="automotive.mechanic">
+        <field name="name">Royalty Hopkins</field>
+    </record>
+</odoo>

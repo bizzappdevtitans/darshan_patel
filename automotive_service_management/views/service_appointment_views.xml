@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+    <record model="ir.ui.view" id="service_appointment_list_view">
+        <field name="name">service_appointment_list_view</field>
+        <field name="model">service.appointment</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="appointment_number"/>
+                <field name="name"/>
+                <field name="car_model"/>
+                <field name="car_number"/>
+                <field name="appointment_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="service_appointment_form_view">
+        <field name="name">service_appointment_form_view</field>
+        <field name="model">service.appointment</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="appointment_number"/>
+                            <field name="name"/>
+                            <field name="car_model"/>
+                        </group>
+                        <group>
+                            <field name="car_number"/>
+                            <field name="appointment_date"/>
+                            <field name="assigned_mechanic"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Services">
+                            <field name="car_sevices_ids"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="service_appointment_calendar_view" model="ir.ui.view">
+        <field name="name">service_appointment_calendar_view</field>
+        <field name="model">service.appointment</field>
+        <field name="type">calendar</field>
+        <field name="arch" type="xml">
+            <calendar string="Appointment" date_start="appointment_date" mode="month">
+                <field name="name"/>
+            </calendar>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_service_appointment">
+        <field name="name">Service Appointments</field>
+        <field name="res_model">service.appointment</field>
+        <field name="view_mode">tree,form,calendar</field>
+    </record>
+
+  </data>
+</odoo>

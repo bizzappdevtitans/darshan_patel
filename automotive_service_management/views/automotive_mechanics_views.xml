@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+    <record model="ir.ui.view" id="automotive_mechanic_list_view">
+        <field name="name">automotive_mechanic_list_view</field>
+        <field name="model">automotive.mechanic</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="work_assigned"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="automotive_mechanic_form_view">
+        <field name="name">automotive_mechanic_form_view</field>
+        <field name="model">automotive.mechanic</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="work_assigned"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_automotive_mechanic">
+        <field name="name">Mechanics</field>
+        <field name="res_model">automotive.mechanic</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+  </data>
+</odoo>
