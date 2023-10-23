@@ -5,9 +5,11 @@
 
         <menuitem name="Service Appointments" id="service_appointment" parent="automotive_service_management" action="action_service_appointment" sequence="1"/>
 
-        <menuitem name="Book Appointment" id="book_appointment" parent="automotive_service_management" action="action_book_appointment" sequence="2"/>
+        <menuitem name="Appointments Window" id="automotive_appointment_window" parent="automotive_service_management" sequence="2"/>
 
-        <menuitem name="Cancel Appointment" id="cancel_appointment" parent="automotive_service_management" action="action_cancel_appointment" sequence="3"/>
+        <menuitem name="Book Appointment" id="book_appointment" parent="automotive_appointment_window" action="action_book_appointment"/>
+
+        <menuitem name="Cancel Appointment" id="cancel_appointment" parent="automotive_appointment_window" action="action_cancel_appointment"/>
 
         <menuitem name="Configuration" id="automotive_service_configuration" parent="automotive_service_management"/>
 

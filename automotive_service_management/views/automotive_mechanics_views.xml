@@ -27,6 +27,11 @@
                             <field name="work_assigned"/>
                         </group>
                     </group>
+                    <notebook>
+                        <page string="Car Serviced">
+                            <field name="repaired_cars_ids"/>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>

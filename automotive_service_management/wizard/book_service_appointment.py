@@ -6,6 +6,7 @@ class BookAppointment(models.Model):
     _description = 'book.appointment'
 
     name = fields.Char(string="Customer Name", required=True)
+    mobile_number = fields.Integer(string="Mobile Number")
     car_model = fields.Char(string="Car Model Name", required=True)
     car_number = fields.Char(string="Car Number", required=True)
     appointment_date = fields.Date(string="Appointment Date", required=True)
@@ -21,8 +22,8 @@ class BookAppointment(models.Model):
                     "car_number": self.car_number,
                     "appointment_date": self.appointment_date,
                     "car_sevices_ids": self.select_service,
+                    "contact_number": self.mobile_number,
                     "assigned_mechanic": mechanic.id
                 }
-                mechanic.write({'work_assigned': 'True'})
                 self.env['service.appointment'].create(vals)
                 break

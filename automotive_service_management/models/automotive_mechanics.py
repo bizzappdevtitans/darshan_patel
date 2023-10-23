@@ -7,3 +7,4 @@ class AutomotiveMechanic(models.Model):
 
     name = fields.Char(string="Mechanic Name")
     work_assigned = fields.Boolean(string="Work Assigned")
+    repaired_cars_ids = fields.Many2many(string="Repaired Cars", comodel_name="service.appointment")
