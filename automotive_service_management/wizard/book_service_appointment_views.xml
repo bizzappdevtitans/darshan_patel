@@ -11,7 +11,7 @@
                     <group>
                         <group>
                             <field name="name"/>
-                            <field name="mobile_number"/>
+                            <field name="mobile_number" widget="phone"/>
                             <field name="car_model"/>
                             <field name="car_number"/>
                         </group>

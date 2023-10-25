@@ -13,6 +13,7 @@
                 <field name="car_number"/>
                 <field name="appointment_date"/>
                 <field name="delivery_date"/>
+                <field name="assigned_mechanic"/>
             </tree>
         </field>
     </record>
@@ -27,7 +28,9 @@
 
                     <button name="button_serviced" class="oe_highlight" states="in_service" string="Serviced" type="object"/>
 
-                    <field name="state" widget="statusbar" statusbar_visible="appointed,in_service,serviced"/>
+                    <button name="button_payment_done" class="oe_highlight" states="serviced" string="Payment Done" type="object"/>
+
+                    <field name="state" widget="statusbar" statusbar_visible="appointed,in_service,serviced,payment_done"/>
                 </header>
                 <sheet>
                     <group>

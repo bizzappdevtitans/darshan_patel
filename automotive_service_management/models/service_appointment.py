@@ -27,6 +27,7 @@ class ServiceAppointment(models.Model):
             ("appointed", "Appointed"),
             ("in_service", "In Service"),
             ("serviced", "Serviced"),
+            ("payment_done", "Payment Done"),
         ],
         string="Status",
         required=True,
@@ -54,6 +55,9 @@ class ServiceAppointment(models.Model):
                 record.write({'work_assigned': 0})
         mail_template = self.env.ref("automotive_service_management.serviced_car_mail")
         mail_template.send_mail(self.id, force_send=True)
+
+    def button_payment_done(self):
+        self.write({"state": "payment_done"})
 
     @api.model
     def create(self, vals):
