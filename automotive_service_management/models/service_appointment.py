@@ -13,14 +13,18 @@ class ServiceAppointment(models.Model):
 
     name = fields.Char(string="Customer Name")
     contact_number = fields.Char(string="Mobile Number")
+    customer_mail = fields.Char(string="Customer Mail")
     appointment_number = fields.Char(string="Appointment Number", readonly=True)
     car_model = fields.Char(string="Car Model Name")
     car_number = fields.Char(string="Car Number")
-    appointment_date = fields.Date(string="Appointment Date")
-    delivery_date = fields.Date(string="Delivery Date", compute="_compute_delivery_date")
+    appointment_date = fields.Date(string="Appointment Date", default=date.today())
+    delivery_date = fields.Date(string="Estimate Delivery Date", compute="_compute_delivery_date")
     car_sevices_ids = fields.Many2many(comodel_name="automotive.accessories", string="Services")
     assigned_mechanic = fields.Many2one(comodel_name="automotive.mechanic", string="Assigned To")
     total_cost = fields.Integer(string="Total Cost", compute="_compute_total_cost", readonly="True")
+    payment_reference_number = fields.Char(string="Payment Reference Number")
+    pick_up_address = fields.Char(string="Pick Up Address")
+    drop_address = fields.Char(string="Drop Address")
 
     state = fields.Selection(
         [
@@ -34,6 +38,15 @@ class ServiceAppointment(models.Model):
         default="appointed",
         tracking=True
     )
+    feedback_level = [
+        ('0', 'Very Low'),
+        ('1', 'Low'),
+        ('2', 'Normal'),
+        ('3', 'High'),
+        ('4', 'Very High'),
+        ('5', 'Excellent')]
+
+    customer_feedback = fields.Selection(feedback_level, default='0')
 
     def button_appointed(self):
         self.write({"state": "appointed"})
@@ -53,11 +66,9 @@ class ServiceAppointment(models.Model):
             if record.name == self.assigned_mechanic.name:
                 record.repaired_cars_ids = [(4, self.id)]
                 record.write({'work_assigned': 0})
+
         mail_template = self.env.ref("automotive_service_management.serviced_car_mail")
         mail_template.send_mail(self.id, force_send=True)
-
-    def button_payment_done(self):
-        self.write({"state": "payment_done"})
 
     @api.model
     def create(self, vals):

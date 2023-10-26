@@ -2,29 +2,36 @@
 <odoo>
     <data>
         <record id="service_appointment_mail" model="mail.template">
-           <field name="name">Service Appointment Mail</field>
-           <field name="model_id" ref="automotive_service_management.model_service_appointment"/>
-           <field name="auto_delete" eval="False"/>
-           <field name="subject">Service Appointment Remainder</field>
-           <field name="body_html">
+            <field name="name">Service Appointment Mail</field>
+            <field name="model_id" ref="automotive_service_management.model_service_appointment"/>
+            <field name="subject">Appointment Mail</field>
+            <field name="auto_delete" eval="False"/>
+            <field name="email_from">{{ user.email }}</field>
+            <field name="email_to">{{ object.customer_mail }}</field>
+            <field name="subject">Service Appointment Remainder</field>
+            <field name="body_html">
                Dear sir,
+               We Inform You That,
                Today Is Your Appointment For Car service,
-               Please send your car to our service center.
                Thank You
-           </field>
+            </field>
         </record>
 
         <record id="serviced_car_mail" model="mail.template">
-           <field name="name">Serviced Car Mail</field>
-           <field name="model_id" ref="automotive_service_management.model_service_appointment"/>
-           <field name="auto_delete" eval="False"/>
-           <field name="subject">Serviced Car Mail</field>
-           <field name="body_html">
+            <field name="name">Serviced Car Mail</field>
+            <field name="model_id" ref="automotive_service_management.model_service_appointment"/>
+            <field name="subject">Serviced Mail</field>
+            <field name="auto_delete" eval="False"/>
+            <field name="subject">Serviced Car Mail</field>
+            <field name="email_from">{{ user.email }}</field>
+            <field name="email_to">{{ object.customer_mail }}</field>
+            <field name="subject">Service Appointment Remainder</field>
+            <field name="body_html">
                Dear sir,
+               We Inform You That,
                Your car is successfully repaired from our mechanic.
-               So We Request to you please take your car delivery from our service center.
                Thank You.
-           </field>
+            </field>
         </record>
     </data>
 </odoo>

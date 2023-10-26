@@ -103,6 +103,12 @@
         <field name="service_charge">50</field>
         <field name="image_256" type="base64" file="automotive_service_management/static/img/Car Charger.png"/>
     </record>
+    <record id="automotive_accessories_18" model="automotive.accessories">
+        <field name="name">Car Pick Up/Drop Service</field>
+        <field name="accessories_name">Car Pick Up/Drop Service</field>
+        <field name="service_charge">300</field>
+        <field name="image_256" type="base64" file="automotive_service_management/static/img/car_tow.png"/>
+    </record>
 
 
     <record id="automotive_mechanic_1" model="automotive.mechanic">

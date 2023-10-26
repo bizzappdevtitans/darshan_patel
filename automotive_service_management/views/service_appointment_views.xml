@@ -6,7 +6,8 @@
         <field name="name">service_appointment_list_view</field>
         <field name="model">service.appointment</field>
         <field name="arch" type="xml">
-            <tree default_order="id desc">
+            <tree default_order="id desc" decoration-success="state == 'payment_done'"
+                decoration-danger="state != 'payment_done'">
                 <field name="appointment_number"/>
                 <field name="name"/>
                 <field name="car_model"/>
@@ -14,6 +15,7 @@
                 <field name="appointment_date"/>
                 <field name="delivery_date"/>
                 <field name="assigned_mechanic"/>
+                <field name="state" invisible="1"/>
             </tree>
         </field>
     </record>
@@ -28,7 +30,7 @@
 
                     <button name="button_serviced" class="oe_highlight" states="in_service" string="Serviced" type="object"/>
 
-                    <button name="button_payment_done" class="oe_highlight" states="serviced" string="Payment Done" type="object"/>
+                    <button name="%(automotive_service_management.action_service_payment)d" class="oe_highlight" states="serviced" string="Payment Done" type="action"/>
 
                     <field name="state" widget="statusbar" statusbar_visible="appointed,in_service,serviced,payment_done"/>
                 </header>
@@ -38,22 +40,28 @@
                             <field name="appointment_number"/>
                             <field name="name"/>
                             <field name="contact_number" widget="phone"/>
+                            <field name="customer_mail" widget="email"/>
                             <field name="car_model"/>
+                            <field name="car_number"/>
                         </group>
                         <group>
-                            <field name="car_number"/>
                             <field name="appointment_date"/>
                             <field name="delivery_date"/>
                             <field name="assigned_mechanic"/>
+                            <field name="pick_up_address"/>
+                            <field name="drop_address"/>
                         </group>
                     </group>
                     <notebook>
                         <page string="Services">
-                            <field name="car_sevices_ids"/>
+                            <field name="car_sevices_ids" attrs="{'readonly': [('state', '!=', 'appointed')]}"/>
                         </page>
                     </notebook>
                     <group>
                         <group>
+                            <field name="payment_reference_number" attrs="{'invisible': [('state','!=','payment_done')] }"/>
+                            <field name="customer_feedback" widget="priority"
+                                attrs="{'invisible': [('state','!=','payment_done')] }"/>
                         </group>
                         <group>
                             <field name="total_cost"/>
@@ -89,6 +97,7 @@
        <field name="interval_number">1</field>
        <field name="interval_type">days</field>
        <field name="numbercall">-1</field>
+       <field name="doall">True</field>
    </record>
 
 

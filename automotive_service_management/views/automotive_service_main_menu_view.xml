@@ -16,6 +16,5 @@
         <menuitem name="Accessories" id="automotive_accessories" parent="automotive_service_configuration" action="action_automotive_accessories"/>
 
         <menuitem name="Mechanics" id="automotive_mechanics" parent="automotive_service_configuration" action="action_automotive_mechanic"/>
-
     </data>
 </odoo>

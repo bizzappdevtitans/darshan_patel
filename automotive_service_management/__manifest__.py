@@ -19,6 +19,7 @@
         'security/ir.model.access.csv',
         'data/service_appointment_data.xml',
         'data/ir_config_parameter.xml',
+        'wizard/service_payment_views.xml',
         'views/service_appointment_views.xml',
         'wizard/book_service_appointment_views.xml',
         'wizard/cancel_service_appointment_views.xml',
