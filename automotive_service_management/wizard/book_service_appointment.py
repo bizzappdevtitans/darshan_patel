@@ -2,8 +2,8 @@ from odoo import models, fields, api
 
 
 class BookAppointment(models.TransientModel):
-    _name = 'book.appointment'
-    _description = 'book.appointment'
+    _name = "book.appointment"
+    _description = "book.appointment"
 
     name = fields.Char(string="Customer Name", required=True)
     mobile_number = fields.Integer(string="Mobile Number")
@@ -11,12 +11,14 @@ class BookAppointment(models.TransientModel):
     car_model = fields.Char(string="Car Model Name", required=True)
     car_number = fields.Char(string="Car Number", required=True)
     appointment_date = fields.Date(string="Appointment Date", required=True)
-    select_service = fields.Many2many(comodel_name="automotive.accessories", string="Select Service")
+    select_service = fields.Many2many(
+        comodel_name="automotive.accessories", string="Select Service"
+    )
     pick_up_address = fields.Char(string="Pick Up Address")
     drop_address = fields.Char(string="Drop Address")
 
     def action_book_appointment(self):
-        mechanics_vacance = self.env['automotive.mechanic'].search([])
+        mechanics_vacance = self.env["automotive.mechanic"].search([])
         for mechanic in mechanics_vacance:
             if not mechanic.work_assigned:
                 vals = {
@@ -31,5 +33,5 @@ class BookAppointment(models.TransientModel):
                     "drop_address": self.drop_address,
                     "customer_mail": self.customer_mail,
                 }
-                self.env['service.appointment'].create(vals)
+                self.env["service.appointment"].create(vals)
                 break
