@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- inherited view of manufacturing order #T00405-->
+        <record id="manufacturing_inherit_form_view" model="ir.ui.view">
+            <field name="name">manufacturing_inherit_form_view</field>
+            <field name="model">mrp.production</field>
+            <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='company_id']" position="after">
+                    <field name="manufacturing_description"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
