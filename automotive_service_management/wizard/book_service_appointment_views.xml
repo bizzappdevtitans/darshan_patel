@@ -2,6 +2,7 @@
 <odoo>
   <data>
 
+    <!-- book appointmnet form view #T00470 -->
     <record model="ir.ui.view" id="book_appointment_form_view">
         <field name="name">book_appointment_form_view</field>
         <field name="model">book.appointment</field>
@@ -32,6 +33,7 @@
         </field>
     </record>
 
+    <!-- book appointmnet action window #T00470 -->
     <record model="ir.actions.act_window" id="action_book_appointment">
         <field name="name">Book Service Appointments</field>
         <field name="res_model">book.appointment</field>

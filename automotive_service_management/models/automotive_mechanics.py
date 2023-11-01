@@ -3,9 +3,10 @@ from odoo import models, fields
 
 class AutomotiveMechanic(models.Model):
     _name = "automotive.mechanic"
-    _description = "automotive.mechanic"
+    _description = "Automotive Mechanic"
     _inherit = ["image.mixin"]
 
+    # fields for automotive mechanic #T00470
     name = fields.Char(string="Mechanic Name")
     work_assigned = fields.Boolean(string="Work Assigned")
     repaired_cars_ids = fields.Many2many(

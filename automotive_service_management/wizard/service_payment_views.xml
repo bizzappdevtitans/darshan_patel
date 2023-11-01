@@ -2,6 +2,7 @@
 <odoo>
   <data>
 
+    <!-- service payment form view #T00470 -->
     <record model="ir.ui.view" id="service_payment_form_view">
         <field name="name">service_payment_form_view</field>
         <field name="model">service.payment</field>
@@ -30,6 +31,7 @@
         </field>
     </record>
 
+    <!-- service payment action window #T00470 -->
     <record model="ir.actions.act_window" id="action_service_payment">
         <field name="name">Service Payment</field>
         <field name="res_model">service.payment</field>

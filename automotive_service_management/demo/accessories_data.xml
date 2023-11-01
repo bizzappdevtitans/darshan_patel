@@ -1,44 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    <!-- records for automotive service product #T00470 -->
     <record id="automotive_accessories_1" model="automotive.accessories">
         <field name="name">Car Wash</field>
-        <field name="accessories_name"></field>
         <field name="service_charge">500</field>
         <field name="image_256" type="base64" file="automotive_service_management/static/img/car wash.png"/>
     </record>
     <record id="automotive_accessories_2" model="automotive.accessories">
-        <field name="name">TIRE PRESSURE</field>
-        <field name="accessories_name"></field>
+        <field name="name">Tire Pressure</field>
         <field name="service_charge">100</field>
         <field name="image_256" type="base64" file="automotive_service_management/static/img/tire-pressure.png"/>
     </record>
     <record id="automotive_accessories_3" model="automotive.accessories">
         <field name="name">Parts Cleaning</field>
-        <field name="accessories_name"></field>
         <field name="service_charge">350</field>
         <field name="image_256" type="base64" file="automotive_service_management/static/img/parts cleaning.png"/>
     </record>
     <record id="automotive_accessories_4" model="automotive.accessories">
         <field name="name">Repair Engine</field>
-        <field name="accessories_name"></field>
         <field name="service_charge">2000</field>
         <field name="image_256" type="base64" file="automotive_service_management/static/img/repair engine.png"/>
     </record>
     <record id="automotive_accessories_5" model="automotive.accessories">
         <field name="name">Repair Paddle</field>
-        <field name="accessories_name"></field>
         <field name="service_charge">500</field>
         <field name="image_256" type="base64" file="automotive_service_management/static/img/repair-paddle.png"/>
     </record>
     <record id="automotive_accessories_6" model="automotive.accessories">
         <field name="name">Repair GearBox</field>
-        <field name="accessories_name"></field>
         <field name="service_charge">1500</field>
         <field name="image_256" type="base64" file="automotive_service_management/static/img/Repair GearBox.png"/>
     </record>
     <record id="automotive_accessories_7" model="automotive.accessories">
         <field name="name">Exchange Oil</field>
-        <field name="accessories_name"></field>
         <field name="service_charge">100</field>
         <field name="image_256" type="base64" file="automotive_service_management/static/img/Exchange Oil.png"/>
     </record>
@@ -56,32 +50,32 @@
         <field name="image_256" type="base64" file="automotive_service_management/static/img/Engine Oil.png"/>
     </record>
     <record id="automotive_accessories_10" model="automotive.accessories">
-        <field name="name">HEADLIGHTS, TURN SIGNALS, BRAKE, AND PARKING LIGHTS</field>
-        <field name="accessories_name">HEADLIGHTS, TURN SIGNALS, BRAKE, AND PARKING LIGHTS</field>
+        <field name="name">Headlights, Turn Signals, Brake, And Parking Lights</field>
+        <field name="accessories_name">Headlights, Turn Signals, Brake, And Parking Lights</field>
         <field name="service_charge">1000</field>
         <field name="image_256" type="base64" file="automotive_service_management/static/img/HEADLIGHTS_-TURN-SIGNALS_-BRAKE_-AND-PARKING-LIGHTS.png"/>
     </record>
     <record id="automotive_accessories_11" model="automotive.accessories">
-        <field name="name">SPARK PLUGS</field>
-        <field name="accessories_name">SPARK PLUGS</field>
+        <field name="name">Spark Plugs</field>
+        <field name="accessories_name">Spark Plugs</field>
         <field name="service_charge">300</field>
         <field name="image_256" type="base64" file="automotive_service_management/static/img/SPARK PLUGS.png"/>
     </record>
     <record id="automotive_accessories_12" model="automotive.accessories">
-        <field name="name">WINDSHIELD WIPERS</field>
-        <field name="accessories_name">WINDSHIELD WIPERS</field>
+        <field name="name">Windshield Wipers</field>
+        <field name="accessories_name">Windshield Wipers</field>
         <field name="service_charge">500</field>
         <field name="image_256" type="base64" file="automotive_service_management/static/img/WINDSHIELD-WIPERS.png"/>
     </record>
     <record id="automotive_accessories_13" model="automotive.accessories">
-        <field name="name">BATTERY</field>
-        <field name="accessories_name">BATTERY</field>
+        <field name="name">Battery</field>
+        <field name="accessories_name">Battery</field>
         <field name="service_charge">1000</field>
         <field name="image_256" type="base64" file="automotive_service_management/static/img/BATTERY.png"/>
     </record>
     <record id="automotive_accessories_14" model="automotive.accessories">
-        <field name="name">TIRES-1</field>
-        <field name="accessories_name">TIRE</field>
+        <field name="name">Tire-1</field>
+        <field name="accessories_name">Tire</field>
         <field name="service_charge">600</field>
         <field name="image_256" type="base64" file="automotive_service_management/static/img/TIRES-1.png"/>
     </record>
@@ -110,7 +104,7 @@
         <field name="image_256" type="base64" file="automotive_service_management/static/img/car_tow.png"/>
     </record>
 
-
+    <!-- records for automotive mechanic #T00470 -->
     <record id="automotive_mechanic_1" model="automotive.mechanic">
         <field name="name">Zoie Rosales</field>
         <field name="image_256" type="base64" file="automotive_service_management/static/img/Zoie Rosales.png"/>

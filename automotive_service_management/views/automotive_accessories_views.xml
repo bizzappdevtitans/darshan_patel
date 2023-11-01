@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
   <data>
-
+    <!-- automotive accessories list view #T00470 -->
     <record model="ir.ui.view" id="automotive_accessories_list_view">
         <field name="name">automotive_accessories_list_view</field>
         <field name="model">automotive.accessories</field>
@@ -14,6 +14,7 @@
         </field>
     </record>
 
+    <!-- automotive accessories form view #T00470 -->
     <record model="ir.ui.view" id="automotive_accessories_form_view">
         <field name="name">automotive_accessories_form_view</field>
         <field name="model">automotive.accessories</field>
@@ -35,6 +36,7 @@
         </field>
     </record>
 
+    <!-- automotive accessories kanban view #T00470 -->
     <record id="automotive_accessories_kanban_view" model="ir.ui.view">
         <field name="name">automotive_accessories_kanban_view</field>
         <field name="model">automotive.accessories</field>
@@ -63,6 +65,20 @@
         </field>
     </record>
 
+    <!-- automotive accessories search view #T00470 -->
+    <record model="ir.ui.view" id="automotive_accessories_search_view">
+        <field name="name">automotive_accessories_search_view</field>
+        <field name="model">automotive.accessories</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="service_charge"/>
+                <field name="accessories_name"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- automotive accessories action window #T00470 -->
     <record model="ir.actions.act_window" id="action_automotive_accessories">
         <field name="name">Accessories</field>
         <field name="res_model">automotive.accessories</field>

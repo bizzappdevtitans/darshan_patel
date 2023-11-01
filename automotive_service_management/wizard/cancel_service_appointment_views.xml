@@ -2,6 +2,7 @@
 <odoo>
   <data>
 
+    <!-- cancel appointment form view #T00470 -->
     <record model="ir.ui.view" id="cancel_appointment_form_view">
         <field name="name">cancel_appointment_form_view</field>
         <field name="model">cancel.appointment</field>
@@ -22,6 +23,7 @@
         </field>
     </record>
 
+    <!-- action window for cancel appointment T00470 -->
     <record model="ir.actions.act_window" id="action_cancel_appointment">
         <field name="name">Cancel Service Appointments</field>
         <field name="res_model">cancel.appointment</field>

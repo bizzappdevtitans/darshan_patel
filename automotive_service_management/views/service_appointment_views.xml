@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
   <data>
-
+    <!-- service appointment list view #T00470 -->
     <record model="ir.ui.view" id="service_appointment_list_view">
         <field name="name">service_appointment_list_view</field>
         <field name="model">service.appointment</field>
@@ -14,12 +14,13 @@
                 <field name="car_number"/>
                 <field name="appointment_date"/>
                 <field name="delivery_date"/>
-                <field name="assigned_mechanic"/>
+                <field name="assigned_mechanic_id"/>
                 <field name="state" invisible="1"/>
             </tree>
         </field>
     </record>
 
+    <!-- service appointment form view #T00470 -->
     <record model="ir.ui.view" id="service_appointment_form_view">
         <field name="name">service_appointment_form_view</field>
         <field name="model">service.appointment</field>
@@ -47,7 +48,7 @@
                         <group>
                             <field name="appointment_date"/>
                             <field name="delivery_date"/>
-                            <field name="assigned_mechanic"/>
+                            <field name="assigned_mechanic_id"/>
                             <field name="pick_up_address"/>
                             <field name="drop_address"/>
                         </group>
@@ -77,6 +78,7 @@
         </field>
     </record>
 
+    <!-- service appointment calendar view #T00470 -->
     <record id="service_appointment_calendar_view" model="ir.ui.view">
         <field name="name">service_appointment_calendar_view</field>
         <field name="model">service.appointment</field>
@@ -88,6 +90,25 @@
         </field>
     </record>
 
+    <!-- service appointment search view #T00470 -->
+    <record model="ir.ui.view" id="service_appointment_search_view">
+        <field name="name">service_appointment_search_view</field>
+        <field name="model">service.appointment</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="appointment_number"/>
+                <field name="name"/>
+                <field name="car_model"/>
+                <field name="car_number"/>
+                <field name="appointment_date"/>
+                <field name="delivery_date"/>
+                <field name="assigned_mechanic_id"/>
+                <field name="state"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- cron job for send mail to customer that have today service appointment #T00470 -->
     <record id="send_mail_service_appointment" model="ir.cron">
        <field name="name">Mail</field>
        <field name="model_id" ref="model_service_appointment"/>
@@ -101,6 +122,7 @@
    </record>
 
 
+   <!-- service appointment action window #T00470 -->
     <record model="ir.actions.act_window" id="action_service_appointment">
         <field name="name">Service Appointments</field>
         <field name="res_model">service.appointment</field>

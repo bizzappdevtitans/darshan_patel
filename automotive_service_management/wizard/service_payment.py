@@ -4,7 +4,7 @@ from odoo.exceptions import ValidationError
 
 class ServicePayment(models.TransientModel):
     _name = "service.payment"
-    _description = "service.payment"
+    _description = "Service Payment"
 
     appointment_id = fields.Many2one(
         comodel_name="service.appointment", string="Appointment"
@@ -20,8 +20,11 @@ class ServicePayment(models.TransientModel):
         string="Payment Reference Number", required=True
     )
 
+    # get_amount method for get value for field #T00470
     @api.onchange("appointment_id")
     def get_amount(self):
+        """this method for set amount and payment field when we select the
+        appointment #T00470"""
         for record in self:
             record.update({"serviced_amount": self.appointment_id.total_cost})
             record.update(
@@ -46,7 +49,9 @@ class ServicePayment(models.TransientModel):
                 }
             )
 
+    # action_payment_done method for make payment of serviced car #T00470
     def action_payment_done(self):
+        """this method is used for make payment and show the rainbow afer make payment #T00470"""
         for record in self.appointment_id:
             if record.state == "serviced":
                 record.write({"state": "payment_done"})

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
   <data>
+    <!-- automotive mechanic list view #T00470 -->
     <record model="ir.ui.view" id="automotive_mechanic_list_view">
         <field name="name">automotive_mechanic_list_view</field>
         <field name="model">automotive.mechanic</field>
@@ -12,6 +13,7 @@
         </field>
     </record>
 
+    <!-- automotive mechanic form view #T00470 -->
     <record model="ir.ui.view" id="automotive_mechanic_form_view">
         <field name="name">automotive_mechanic_form_view</field>
         <field name="model">automotive.mechanic</field>
@@ -37,6 +39,7 @@
         </field>
     </record>
 
+    <!-- automotive mechanic kanban view #T00470 -->
     <record id="automotive_mechanic_kanban_view" model="ir.ui.view">
         <field name="name">automotive_mechanic_kanban_view</field>
         <field name="model">automotive.mechanic</field>
@@ -65,6 +68,19 @@
         </field>
     </record>
 
+    <!-- automotive mechanic search view #T00470 -->
+    <record model="ir.ui.view" id="automotive_mechanic_search_view">
+        <field name="name">automotive_mechanic_search_view</field>
+        <field name="model">automotive.mechanic</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="work_assigned"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- automotive mechanic action window #T00470 -->
     <record model="ir.actions.act_window" id="action_automotive_mechanic">
         <field name="name">Mechanics</field>
         <field name="res_model">automotive.mechanic</field>
