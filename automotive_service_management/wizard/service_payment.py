@@ -1,5 +1,4 @@
-from odoo import models, fields, api
-from odoo.exceptions import ValidationError
+from odoo import api, fields, models
 
 
 class ServicePayment(models.TransientModel):
@@ -15,9 +14,9 @@ class ServicePayment(models.TransientModel):
     )
     upi_number = fields.Char(string="UPI ID", readonly=True)
     ifsc_code = fields.Char(string="IFSC CODE", readonly=True)
-    account_number = fields.Char(string="Account Number", readonly=True)
+    account_number = fields.Char(string="account_number", readonly=True)
     payment_reference_number = fields.Char(
-        string="Payment Reference Number", required=True
+        string="payment_reference_number", required=True
     )
 
     # get_amount method for get value for field #T00470
@@ -51,7 +50,8 @@ class ServicePayment(models.TransientModel):
 
     # action_payment_done method for make payment of serviced car #T00470
     def action_payment_done(self):
-        """this method is used for make payment and show the rainbow afer make payment #T00470"""
+        """this method is used for make payment and show the rainbow afer
+        make payment #T00470"""
         for record in self.appointment_id:
             if record.state == "serviced":
                 record.write({"state": "payment_done"})
@@ -62,11 +62,10 @@ class ServicePayment(models.TransientModel):
                         + self.payment_mode
                     }
                 )
-            return {
-                "effect": {
-                    "fadeout": "slow",
-                    "message": "Your Payment Has Been Done",
-                    "type": "rainbow_man",
-                    "img_url": "automotive_service_management/static/img/payment.png",
-                }
+        return {
+            "effect": {
+                "fadeout": "slow",
+                "message": "Your Payment Has Been Done",
+                "type": "rainbow_man",
             }
+        }

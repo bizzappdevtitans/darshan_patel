@@ -1,6 +1,4 @@
 from odoo.tests.common import TransactionCase
-from odoo.tests import common
-from odoo.exceptions import ValidationError
 
 
 class TestWizardServicePayment(TransactionCase):
@@ -16,8 +14,12 @@ class TestWizardServicePayment(TransactionCase):
                 "car_model": "BMW",
                 "car_number": "GJ08GY4785",
                 "appointment_date": "2024-12-12",
-                "car_sevices_ids": self.env.ref("automotive_service_management.automotive_accessories_1"),
-                "assigned_mechanic_id": self.env.ref("automotive_service_management.automotive_mechanic_6").id,
+                "car_sevices_ids": self.env.ref(
+                    "automotive_service_management.automotive_accessories_1"
+                ),
+                "assigned_mechanic_id": self.env.ref(
+                    "automotive_service_management.automotive_mechanic_6"
+                ).id,
             }
         )
 
@@ -25,11 +27,12 @@ class TestWizardServicePayment(TransactionCase):
 
         self.appointment_01.button_serviced()
 
-        self.service_payment_01 = self.env['service.payment'].create(
+        self.service_payment_01 = self.env["service.payment"].create(
             {
                 "appointment_id": self.appointment_01.id,
-                "payment_reference_number": "AP000123"
-            })
+                "payment_reference_number": "AP000123",
+            }
+        )
 
     # method for call payment wizard #T00470
     def test_service_payment(self):

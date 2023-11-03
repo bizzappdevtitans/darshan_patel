@@ -1,5 +1,4 @@
 from odoo.tests.common import TransactionCase
-from odoo.tests import common
 
 
 class TestAutomotiveAccessories(TransactionCase):
@@ -14,5 +13,5 @@ class TestAutomotiveAccessories(TransactionCase):
         )
 
     def test_01_some_actions(self):
-        self.assertEqual(self.accessories_01.name, 'car accessories')
+        self.assertEqual(self.accessories_01.name, "car accessories")
         self.assertEqual(self.accessories_01.service_charge, 100)

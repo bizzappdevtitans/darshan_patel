@@ -1,6 +1,4 @@
 from odoo.tests.common import TransactionCase
-from odoo.tests import common
-from odoo.exceptions import ValidationError
 
 
 class TestBookServiceAppointment(TransactionCase):
@@ -16,7 +14,9 @@ class TestBookServiceAppointment(TransactionCase):
                 "car_model": "Range Rover",
                 "car_number": "GJ09TY6754",
                 "appointment_date": "2024-12-12",
-                "select_service": self.env.ref("automotive_service_management.automotive_accessories_1"),
+                "select_service": self.env.ref(
+                    "automotive_service_management.automotive_accessories_1"
+                ),
             }
         )
 

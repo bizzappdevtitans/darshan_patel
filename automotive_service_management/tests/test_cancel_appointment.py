@@ -1,6 +1,5 @@
-from odoo.tests.common import TransactionCase
-from odoo.tests import common
 from odoo.exceptions import ValidationError
+from odoo.tests.common import TransactionCase
 
 
 class TestWizardCancelAppointment(TransactionCase):
@@ -16,16 +15,16 @@ class TestWizardCancelAppointment(TransactionCase):
                 "car_model": "mercedes",
                 "car_number": "GJ08GY4785",
                 "appointment_date": "2024-12-12",
-                "car_sevices_ids": self.env.ref("automotive_service_management.automotive_accessories_1"),
+                "car_sevices_ids": self.env.ref(
+                    "automotive_service_management.automotive_accessories_1"
+                ),
             }
         )
 
         # create record for wizard #T00470
-        self.cancel_appointment_01 = self.env['cancel.appointment'].create(
-            {
-                "appointment_ids": self.appointment_01.id
-            }
-            )
+        self.cancel_appointment_01 = self.env["cancel.appointment"].create(
+            {"appointment_ids": self.appointment_01.id}
+        )
         self.appointment_01.button_in_service()
 
     # test_action_cancel_service_appointment for call wizard function #T00470

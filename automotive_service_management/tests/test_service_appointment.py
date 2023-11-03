@@ -1,6 +1,5 @@
-from odoo.tests.common import TransactionCase
-from odoo.tests import common
 from odoo.exceptions import ValidationError
+from odoo.tests.common import TransactionCase
 
 
 class TestServiceAppointment(TransactionCase):
@@ -77,5 +76,7 @@ class TestServiceAppointment(TransactionCase):
         self.appointment_02.button_appointed()
         self.assertEqual(self.appointment_02.state, "appointed")
 
-        records = self.env["service.appointment"].name_search(name="Ketan", operator="ilike")
+        records = self.env["service.appointment"].name_search(
+            name="Ketan", operator="ilike"
+        )
         self.assertIn(self.appointment_03.id, [record[0] for record in records])

@@ -1,13 +1,9 @@
-# -*- coding: utf-8 -*-
 {
-    "name": "automotive_service_management",
+    "name": "Automotive Service Management",
     "summary": """Automotive Service Management""",
-    "description": """
-        Automotive Service Management
-    """,
     "author": "BizzAppDev",
-    "website": "http://WWW.BizzAppDev.com",
-    "version": "15.0.0.1",
+    "website": "https://github.com/OCA/product-variant",
+    "version": "15.0.0.0.1",
     "depends": ["base", "mail"],
     "data": [
         "security/ir.model.access.csv",
@@ -25,5 +21,5 @@
     "demo": [
         "demo/accessories_data.xml",
     ],
-    "license": "Other proprietary",
+    "license": "LGPL-3",
 }
