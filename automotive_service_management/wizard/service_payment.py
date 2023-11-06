@@ -14,10 +14,8 @@ class ServicePayment(models.TransientModel):
     )
     upi_number = fields.Char(string="UPI ID", readonly=True)
     ifsc_code = fields.Char(string="IFSC CODE", readonly=True)
-    account_number = fields.Char(string="account_number", readonly=True)
-    payment_reference_number = fields.Char(
-        string="payment_reference_number", required=True
-    )
+    account_number = fields.Char(readonly=True)
+    payment_reference_number = fields.Char(required=True)
 
     # get_amount method for get value for field #T00470
     @api.onchange("appointment_id")
@@ -50,7 +48,7 @@ class ServicePayment(models.TransientModel):
 
     # action_payment_done method for make payment of serviced car #T00470
     def action_payment_done(self):
-        """this method is used for make payment and show the rainbow afer
+        """this method is used for make payment and show the rainbow after
         make payment #T00470"""
         for record in self.appointment_id:
             if record.state == "serviced":

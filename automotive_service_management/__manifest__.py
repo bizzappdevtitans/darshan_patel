@@ -21,5 +21,5 @@
     "demo": [
         "demo/accessories_data.xml",
     ],
-    "license": "LGPL-3",
+    "license": "Other proprietary",
 }
