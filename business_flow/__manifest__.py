@@ -2,8 +2,8 @@
     "name": "Business Flow",
     "version": "15.0.0.0.1",
     "category": "Business Flow",
-    "summary": "Pass Value From Sale Order To Purchase, Delivery and\
-                Invoice Order, Manufacture order",
+    "summary": """Pass Value From Sale Order To Purchase, Delivery and
+                Invoice Order, Manufacture order""",
     "author": "Bizzappdev",
     "website": "https://github.com/OCA/product-variant",
     "depends": ["account", "sale_project", "purchase_stock", "mrp"],
