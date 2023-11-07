@@ -5,7 +5,7 @@
     "summary": "sale order set delivery address",
     "author": "Bizzappdev",
     "website": "https://github.com/OCA/product-variant",
-    "depends": ["contacts", "sale_management", "website_sale"],
+    "depends": ["contacts", "sale_management"],
     "data": [
         "views/res_partner.xml",
     ],
