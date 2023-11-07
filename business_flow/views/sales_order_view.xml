@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- inherited view of sale #T00375-->
+    <record id="sales_inherit_form_view" model="ir.ui.view">
+        <field name="name">sales_inherit_form_view</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='payment_term_id']" position="after">
+                <field name="invoice_description" />
+            </xpath>
+            <!-- add field for project and task #T00384 -->
+            <xpath expr="//field[@name='date_order']" position="after">
+                <field name="project_description" />
+                <field name="task_description" />
+            </xpath>
+            <!-- add field for purchase #T00388 -->
+            <xpath expr="//field[@name='payment_term_id']" position="after">
+                <field name="purchase_description" />
+            </xpath>
+            <!-- add field for delivery #T00400 -->
+            <xpath expr="//field[@name='payment_term_id']" position="after">
+                <field name="delivery_description" />
+            </xpath>
+            <!-- add field for manufacturing #T00405 -->
+            <xpath expr="//field[@name='payment_term_id']" position="after">
+                <field name="manufacturing_description" />
+            </xpath>
+        </field>
+    </record>
+</odoo>
