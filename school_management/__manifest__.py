@@ -22,5 +22,5 @@
         "views/school_result.xml",
         "views/school_main_menu.xml",
     ],
-    "license": "LGPL-3",
+    "license": "Other proprietary",
 }
