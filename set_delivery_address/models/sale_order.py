@@ -1,31 +1,35 @@
-from odoo import models, api
+from odoo import api, models
 
 
 class SaleOrder(models.Model):
     _inherit = "sale.order"
 
-    @api.onchange('partner_id')
+    # onchange method for set auto delivery address on sale order #T00457
+    @api.onchange("partner_id")
     def onchange_partner_id(self):
-        super(SaleOrder, self).onchange_partner_id()
-        list_partner = []
-        for record in self.partner_id:
-            for child in record.child_ids:
-                if child.address_verified:
-                    list_partner.append(child.name)
+        """this method set address while select partner in sale order #T00457"""
+        list_partner = [
+            child
+            for record in self.partner_id
+            for child in record.child_ids
+            if child.address_verified
+        ]
 
         for record in self.partner_id:
             for child in record.child_ids:
                 if len(list_partner) > 1:
-                    if child.name == list_partner[0]:
+                    if child == list_partner[0]:
                         values = {
-                            'partner_invoice_id': child.id,
-                            'partner_shipping_id': child.id,
+                            "partner_shipping_id": child.id,
+                            "partner_invoice_id": child.id,
                         }
                         self.update(values)
-                else:
+
+            for child in record.child_ids:
+                if len(list_partner) == 1:
                     if child.address_verified:
                         values = {
-                            'partner_invoice_id': child.id,
-                            'partner_shipping_id': child.id,
+                            "partner_shipping_id": child.id,
+                            "partner_invoice_id": child.id,
                         }
                         self.update(values)
