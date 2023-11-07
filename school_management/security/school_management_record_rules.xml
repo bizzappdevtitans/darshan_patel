@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- heading for security gruops #T00417-->
+    <record id="module_category_school_management" model="ir.module.category">
+        <field name="name">School Management</field>
+        <field name="description">category for school management</field>
+    </record>
+
+    <!-- security group for user as a teacher #T00417 -->
+    <record id="group_student_name_teacher" model="res.groups">
+        <field name="name">Teacher</field>
+        <field name="category_id" ref="module_category_school_management" />
+    </record>
+
+    <!-- security group for user as a principle #T00417-->
+    <record id="group_student_name_principle" model="res.groups">
+        <field name="name">Principle</field>
+        <field name="category_id" ref="module_category_school_management" />
+        <field name="implied_ids" eval="[(4, ref('group_student_name_teacher'))]" />
+    </record>
+
+    <!-- record rules for security groups #T00417 -->
+    <record id="school_management_record_rule" model="ir.rule">
+        <field name="name">Record Rule</field>
+        <field name="model_id" ref="model_student_name" />
+        <field name="domain_force">[('admin_user_id','=', user.id)]</field>
+        <field name="groups" eval="[(4, ref('group_student_name_teacher'))]" />
+    </record>
+</odoo>

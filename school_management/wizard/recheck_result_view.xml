@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <!-- school management recheck result list view #T00365-->
+    <record id="school_management_recheck_result_list_view" model="ir.ui.view">
+        <field name="name">school_management_recheck_result_list_view</field>
+        <field name="model">recheck.result</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field
+                    name="enrollment_number_id"
+                    decoration-danger="1"
+                    decoration-bf="1"
+                />
+            </tree>
+        </field>
+    </record>
+
+    <!--school management recheck result form view #T00365-->
+    <record id="school_management_recheck_result_form_view" model="ir.ui.view">
+        <field name="name">school_management_recheck_result_form_view</field>
+        <field name="model">recheck.result</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="enrollment_number_id" />
+                        </group>
+                    </group>
+                    <footer>
+                        <button
+                            name="action_recheck"
+                            string="Recheck Result"
+                            class="btn-primary"
+                            type="object"
+                            data-hotkey="v"
+                        />
+                        <button
+                            string="Discard"
+                            class="btn-secondary"
+                            special="cancel"
+                            data-hotkey="z"
+                        />
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- action for recheck result #T00365-->
+    <record id="action_recheck_result_view" model="ir.actions.act_window">
+        <field name="name">Recheck Result</field>
+        <field name="res_model">recheck.result</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <!-- action for recheck result student list #T00365-->
+    <record id="action_recheck_result_list_view" model="ir.actions.act_window">
+        <field name="name">Recheck Result List</field>
+        <field name="res_model">recheck.result</field>
+        <field name="view_mode">tree</field>
+        <field name="target">current</field>
+    </record>
+
+</odoo>
