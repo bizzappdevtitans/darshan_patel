@@ -3,11 +3,11 @@
     "version": "15.0.0.0.1",
     "category": "sale order",
     "summary": "sale order set delivery address",
-    "author": "Bizzappdev",
-    "website": "https://github.com/OCA/product-variant",
+    "author": "BizzAppDev",
+    "website": "https://bizzappdev.com",
     "depends": ["contacts", "sale_management"],
     "data": [
         "views/res_partner.xml",
     ],
-    "license": "LGPL-3",
+    "license": "Other proprietary",
 }
