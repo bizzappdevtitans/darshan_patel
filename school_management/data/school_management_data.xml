@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- server action for execute code for records #T00410-->
+    <record id="server_action_code" model="ir.actions.server">
+            <field name="name">Mark As Passed</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_student_name" />
+            <field name="binding_model_id" ref="model_student_name" />
+            <field name="state">code</field>
+            <field name="code">
+                for record in records:
+                    if record.state == 'study':
+                        record.button_passed()
+            </field>
+    </record>
+
+    <!-- automated action record #T00420 -->
+    <record id="school_management_automated_action" model="base.automation">
+        <field name="name">Set Automated Action</field>
+        <field name="model_id" ref="school_management.model_student_name" />
+        <field name="state">object_write</field>
+        <field name="trigger">on_write</field>
+        <field name="filter_pre_domain">[('state', '=', 'admitted')]</field>
+        <field name="active" eval="True" />
+        <field name="filter_domain">[('state', '=', 'study')]</field>
+    </record>
+</odoo>
