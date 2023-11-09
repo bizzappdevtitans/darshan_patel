@@ -56,24 +56,6 @@
         </field>
     </record>
 
-    <!-- server action for update records #T00410-->
-    <record id="server_action_set_records_as_indoor" model="ir.actions.server">
-            <field name="name">Set As Indoor</field>
-            <field name="type">ir.actions.server</field>
-            <field name="model_id" ref="model_school_sports" />
-            <field name="binding_model_id" ref="model_school_sports" />
-            <field name="state">object_write</field>
-    </record>
-
-    <!-- server action for update records #T00410-->
-    <record id="server_action_set_records_as_outdoor" model="ir.actions.server">
-            <field name="name">Set As Outdoor</field>
-            <field name="type">ir.actions.server</field>
-            <field name="model_id" ref="model_school_sports" />
-            <field name="binding_model_id" ref="model_school_sports" />
-            <field name="state">object_write</field>
-    </record>
-
     <!-- school sports action #T00341-->
     <record id="action_school_sports" model="ir.actions.act_window">
         <field name="name">Player List</field>

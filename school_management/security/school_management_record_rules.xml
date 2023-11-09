@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-    <!-- heading for security gruops #T00417-->
+    <!-- School Management security gruops #T00417-->
     <record id="module_category_school_management" model="ir.module.category">
         <field name="name">School Management</field>
         <field name="description">category for school management</field>
