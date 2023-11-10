@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="sale_order_split_quotation_form_view">
+        <field name="name">sale_order_split_quotation_form_view</field>
+        <field name="model">sale.order.split.quotation</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="sale_order_id" />
+                            <field name="split_sale_order" />
+                        </group>
+                    </group>
+                    <footer>
+                        <button
+                            name="action_split_sale_order"
+                            string="Split Sale Order"
+                            class="btn-primary"
+                            type="object"
+                            data-hotkey="v"
+                        />
+                        <button
+                            string="Discard"
+                            class="btn-secondary"
+                            special="cancel"
+                            data-hotkey="z"
+                        />
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_sale_order_split_quotation">
+        <field name="name">Split Sale Order</field>
+        <field name="res_model">sale.order.split.quotation</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>
