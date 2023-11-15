@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
+    <!-- sale_order_split_quotation wizard form view #T00482 -->
     <record model="ir.ui.view" id="sale_order_split_quotation_form_view">
         <field name="name">sale_order_split_quotation_form_view</field>
         <field name="model">sale.order.split.quotation</field>
@@ -32,6 +33,7 @@
         </field>
     </record>
 
+    <!-- sale_order_split_quotation wizard action window #T00482 -->
     <record model="ir.actions.act_window" id="action_sale_order_split_quotation">
         <field name="name">Split Sale Order</field>
         <field name="res_model">sale.order.split.quotation</field>
