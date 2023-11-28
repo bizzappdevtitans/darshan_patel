@@ -9,10 +9,16 @@
                 <sheet>
                     <group>
                         <group>
-                            <field name="sale_order_id" />
                             <field name="split_sale_order" />
                         </group>
                     </group>
+                    <notebook
+                        attrs="{'invisible':[('split_sale_order','!=','selected_lines')] }"
+                    >
+                        <page string="Product Records" name="sale_order_notebook">
+                            <field name="sale_order_line_ids" />
+                        </page>
+                    </notebook>
                     <footer>
                         <button
                             name="action_split_sale_order"
