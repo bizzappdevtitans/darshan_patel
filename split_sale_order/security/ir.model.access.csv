@@ -1,2 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-split_sale_order.access_sale_order_split_quotation,access_sale_order_split_quotation,split_sale_order.model_sale_order_split_quotation,base.group_user,1,1,1,1
