@@ -13,7 +13,7 @@
                     type="action"
                     string="Split Sale Order"
                     class="oe_highlight"
-                    attrs="{'invisible': [('state', '!=', 'draft')]}"
+                    attrs="{'invisible': ['|', '|', ('state', '=', 'sale'), ('state', '=', 'done'), ('state', '=', 'cancel')]}"
                 />
             </xpath>
             <!-- added field for sale order reference #T6982 -->
