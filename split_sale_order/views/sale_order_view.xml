@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- inherited view of sale #T6982-->
+    <record id="split_sale_order_form_view" model="ir.ui.view">
+        <field name="name">split.sale.order.form.view</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form" />
+        <field name="arch" type="xml">
+            <!-- added button for split sale order wizard #T6982 -->
+            <xpath expr="//button[@name='payment_action_capture']" position="after">
+                <button
+                    name="%(split_sale_order.action_sale_order_split_quotation)d"
+                    type="action"
+                    string="Split Sale Order"
+                    class="oe_highlight"
+                    attrs="{'invisible': ['|', '|', ('state', '=', 'sale'), ('state', '=', 'done'), ('state', '=', 'cancel')]}"
+                />
+            </xpath>
+            <!-- added field for sale order reference #T6982 -->
+            <xpath expr="//field[@name='sale_order_template_id']" position="after">
+                <field name="sale_order_reference" />
+            </xpath>
+        </field>
+    </record>
+</odoo>
