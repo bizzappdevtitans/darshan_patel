@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- product variant form view #T7041 -->
+    <record id="add_new_field_at_product_product_variants_form_view" model="ir.ui.view">
+        <field name="name">add.new.field.at.product.product.variants.form.view</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_normal_form_view" />
+        <field name="arch" type="xml">
+            <!--added field for product variant #T7041 -->
+            <xpath expr="//field[@name='company_id']" position="after">
+                <field name="short_description" />
+            </xpath>
+        </field>
+    </record>
+</odoo>
